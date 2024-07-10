@@ -1,0 +1,110 @@
+{% extends "base_top.html" %}
+{% load static %}
+
+{% block title %}Cook{% endblock %}
+
+{% block content %}
+    <!-- 自定义 CSS -->
+    <style>
+        body {background-image: url("{% static 'img/bk_eat.jpeg' %}"); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;}
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header1.html' %}
+    <!--1st section-->
+    <section id="second">
+        <div class="container" style="background-color: #e3f2fd;">
+            <div class="row">
+                <div class="col-md-4 text-center"> 
+                    <img src="{% static 'img/Falin_2.png' %}">
+                    <h5>奇美拉 法琳</h5>
+                </div>
+                <div class="col-md-8 text-left">
+                    <p class="lead">所屬團體：萊歐斯隊→狂亂魔法師勢力→黃金國</p>
+                    <p>總是眯著眼睛，情緒激動時會睜開，實際上是因為近視。</p>
+                    <P>和瑪露西爾一同擔當小隊中的魔法師，魔法天賦極高，專攻地精魔法體系，在隊伍中負責治療、強化、防禦、除靈等輔助工作，與負責攻擊型魔法的瑪露西爾相輔相成。</P>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--2nd section-->
+    <section id="latest">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                <img src="{% static 'img/ck_golem.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">魔像菜園</h5>
+                    <p class="card-text">魔像的體內有大量營養成分，總是保持著適當的溫度和濕度，而且可以自行調整水分，其上可以種植莊稼，既可以當做農田也可以當做護衛農田的衛士。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">Risk：✩✩✩</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/ck_Laios.png' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                <img src="{% static 'img/ck_kraken.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">大克拉肯</h5>
+                    <p class="card-text">以觸手發動攻擊，體表能夠抵抗一般武器和魔法的攻擊，但生理結構與一般的魷魚、章魚相似，雙眼之間的位置是其神經中樞，刺擊該部位可以直接將其殺死，死後體表會迅速褪色。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">Risk：✩✩✩✩</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/ck_Marcille.png' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                <img src="{% static 'img/ck_reddragon.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">再戰炎龍</h5>
+                    <p class="card-text">通常情況下每次進食後都會有較長的休眠期，但是吞掉了法琳的這頭炎龍受到了狂亂魔法師的命令尋找德爾嘉魯，因此沒有休眠並且極為反常地從第六層來到了第五層，法琳也因此被提前消化。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">Risk：✩✩✩✩✩</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/ck_Senshi.png' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                <img src="{% static 'img/ck_cockatrice.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Surprise！毒蛇雞</h5>
+                    <p class="card-text">《迷宮美食指南》上曾有欄目比較過蛇尾雞和毒蛇雞的味道，稱毒蛇雞的肉口味很像石頭，但萊歐斯等人實際吃過後發現並非如此，只是比蛇尾雞的肉更鹹一點。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">Risk：✩✩✩✩</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/ck_Chilchuck.png' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                <img src="{% static 'img/ck_shapeshifter.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">遭遇變形怪</h5>
+                    <p class="card-text">雖然智能程度較低，但以幻術製造的擬態也會根據他人印象產生的性格流利地使用語言與他人進行溝通。製造幻術時本體會躲在暗處，等待獵物體力耗盡後再現身捕獵，但因為本質是野獸，所以受到針對獸類的挑釁如萊歐斯模仿狗的舉動就會因憤怒而提早現身並解除幻象</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">Risk：✩✩✩✩</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
