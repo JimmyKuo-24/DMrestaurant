@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Order Confirm{% endblock %}
+
+{% block content %}
+    <!-- 自定义 CSS -->
+    <style>
+        body {background-image: url("{% static 'img/bk_dungeonmeshi.jpg' %}"); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;}
+        .register-container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header1.html' %}
+    <div class="container register-container" style="background-color: #e3f2fd;">
+        <h2>Order Confirmation</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Cuisine</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in orders %}
+                <tr>
+                    <td><img src="{{ item.order.cuisine.image.url }}" class="pic_transform" height="60"></td>
+                    <td>{{ item.order.cuisine.name }}</td>
+                    <td>{{ item.order.quantity }}</td>
+                    <td>$ {{ item.order_total }} TWD</td>
+                    <td>
+                        <a href="{% url 'order_increase' item.order.id %}" class="btn btn-success btn-sm">+</a>
+                        <a href="{% url 'order_decrease' item.order.id %}" class="btn btn-warning btn-sm">-</a>
+                        <a href="{% url 'order_delete' item.order.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Total Price: ${{ total_price }}</h3>
+        <form method="POST" action="{% url 'order_confirm' order_id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Confirm Order</button>
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container register-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card text-center">
+                        <h2>還需要其他的料理嗎？</h2>
+                        <form method="post" action="{% url 'add_item_to_order' order_id %}">
+                            {% csrf_token %}
+                            {{ order_form.as_p }}
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

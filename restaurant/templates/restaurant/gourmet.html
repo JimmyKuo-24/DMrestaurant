@@ -1,0 +1,146 @@
+{% extends "base_top.html" %}
+{% load static %}
+
+{% block title %}Gourmet{% endblock %}
+
+{% block content %}
+    <!-- 自定义 CSS -->
+    <style>
+        body {background-image: url("{% static 'img/bk_meshi.jpg' %}"); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;}
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header1.html' %}
+    <!--1st section-->
+    <section id="second">
+        <div class="container" style="background-color: #e3f2fd;">
+            <div class="row">
+                <div class="col-md-4 text-center"> 
+                    <img src="{% static 'img/Marcille_2.png' %}">
+                    <h5>表情包 瑪露西爾</h5>
+                </div>
+                <div class="col-md-8 text-left">
+                    <p class="lead">所屬團體：萊歐斯隊→迷宮之主→黃金國</p>
+                    <p>因為認真坦率的性格，經常與好挖苦人的齊爾查克爭論，吐槽和顏藝擔當。</p>
+                    <P>擅長攻擊魔法，雖然也會其他輔助型的魔法，但是效果比較一般。像治療法術和保護法術的效果不如法琳。此外她在學校的本專業其實是治療相關，與迷宮相關的魔法都是臨時抱佛腳，可惜周圍的人都沒有意識到這有多厲害。專長其實是古代的禁忌魔法。</P>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--2nd section-->
+    <section id="latest">
+        <div class="row row-cols-1 row-cols-md-6 g-4">
+            <div class="col">
+                <div class="card h-90">
+                <img src="{% static 'img/gm_mushhotpot.jpg' %}" class="card-img-top pic_transform" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">大蠍子和走路菇鍋</h5>
+                    <p class="card-text">一行值得紀念的第一道魔物料理。森西秘藏的高級食材干制史萊姆也是一大亮點。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">❤❤❤❤❤</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/m1.jpeg' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-90">
+                <img src="{% static 'img/gm_roastbasilisk.jpg' %}" class="card-img-top pic_transform" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">烤蛇尾雞</h5>
+                    <p class="card-text">放入各種藥草，烤得鮮嫩多汁，對中了毒的冒險者也有立竿見影的效果。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">❤❤❤❤</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/m2.jpeg' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-90">
+                <img src="{% static 'img/gm_mbomelet.jpg' %}" class="card-img-top pic_transform" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">曼德拉草蛋包飯</h5>
+                    <p class="card-text">將切成碎末的曼德拉草與蛇尾雞蛋製作的一道菜。發出叫聲的曼德拉草味道更醇厚。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">❤❤❤❤❤</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-90">
+                <img src="{% static 'img/gm_planttart.jpg' %}" class="card-img-top pic_transform" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">食人植物水果撻</h5>
+                    <p class="card-text">搗碎未成熟的果實，加入一些史萊姆明膠和少量大蠍子湯，底皮用樹果皮。</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-body-secondary text-center">❤❤❤❤</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-90">
+                    <img src="{% static 'img/gm_exorcismsorbet.jpg' %}" class="card-img-top pic_transform" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">除靈雪葩</h5>
+                        <p class="card-text">利用能穿牆的幽靈的特性，用裝著聖水的瓶子直接毆打就能完成。幽靈似乎很冷。</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-body-secondary text-center">❤❤❤</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-90">
+                    <img src="{% static 'img/gm_freshveggie.jpg' %}" class="card-img-top pic_transform" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">新鮮蔬菜午餐</h5>
+                        <p class="card-text">這是用森西在魔像的背上栽培的蔬菜製成。將蔬菜與培根一同放在大鍋中燉煮。</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-body-secondary text-center">❤❤❤❤❤</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/m3.jpeg' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-90">
+                    <img src="{% static 'img/gm_insectsnacks.jpg' %}" class="card-img-top pic_transform" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">天然美味寶蟲點心</h5>
+                        <p class="card-text">用蟲子做的料理。味道和風味都很好，營養價值也很高。味道有點像小魚。</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-body-secondary text-center">❤❤❤</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/m4.jpeg' %}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;" alt="...">
+            </div>
+            <div class="col">
+                <div class="card h-90">
+                    <img src="{% static 'img/gm_boiledmimic.jpg' %}" class="card-img-top pic_transform" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">水煮寶箱怪</h5>
+                        <p class="card-text">寶箱怪加鹽煮過後製成。使用開鎖工具能吃得更方便。使用開鎖工具能吃得更方便。</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-body-secondary text-center">❤❤❤❤</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

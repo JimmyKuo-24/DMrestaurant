@@ -1,0 +1,95 @@
+{% extends "base_top.html" %}
+{% load static %}
+
+{% block title %}Order{% endblock %}
+
+{% block content %}
+    <!-- 自定义 CSS -->
+    <style>
+        body {background-image: url("{% static 'img/bk_laios.jpg' %}"); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;}
+        .container {
+            margin-top: 50px;
+        }
+
+        .blog-detail img {
+            cursor: zoom-in;
+        }
+        .modal-show-pic {
+            cursor: zoom-out;
+        }
+        .img-in-modal {
+            text-align: center;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header1.html' %}
+    <!--1st section-->
+    <section id="second">
+        <div class="container" style="background-color: #e3f2fd;">
+            <div class="row">
+                <div class="col-md-4 text-center"> 
+                    <img src="{% static 'img/Senshi.png' %}">
+                    <h5>大廚 森西</h5>
+                </div>
+                <div class="col-md-8 text-left">
+                    <p class="lead">所屬團體：(新)萊歐斯隊→黃金國</p>
+                    <p>已經在迷宮內安營紮寨並獨自生活了50年的超老手冒險者。</p>
+                    <P>因為看不下去剛剛接觸魔物料理的萊歐斯等人錯誤地處理魔物食材，也為了實現烹飪炎龍的夢想，森西加入了萊歐斯營救妹妹法琳的隊伍中，在指導小隊製作魔物料理方面有著極為關鍵的作用。</P>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container register-container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card text-center">
+                    <h2>Order</h2>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary">Order Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--2nd section-->
+    <section id="latest">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for cuisine in cuisines %}
+                <div class="col">
+                    <div class="card">
+                        <img src="{{ cuisine.image.url }}" class="card-img-top pic_transform" alt="{{ cuisine.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ cuisine.name }}</h5>
+                            <p class="card-text text-center">$ {{ cuisine.price }} TWD</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $('.blog-detail img').on('click', function() {
+                        conaole.log('this');
+                        var src = $(this)[0].src;
+                        var str = '<img src="' + src + '" class="media-object img-in-modal" style="cursor: zoom-out;">';
+                        var modal = $('.modal-show-pic');
+                        modal.html('');
+                        modal.append(str);
+                        modal.modal('');
+                        modal.on('click', function() {$(this).modal('hide');});
+                    });
+                </script>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
